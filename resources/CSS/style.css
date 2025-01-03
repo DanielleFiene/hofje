@@ -1,0 +1,823 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    --first-color: hsl(40, 70%, 55%); /* Golden mustard yellow for a warm and inviting feel */
+    --first-color-alt: hsl(40, 60%, 45%); /* Darker golden mustard for accents */
+    --first-color-light: hsl(40, 50%, 70%); /* Light golden yellow for backgrounds */
+    --first-color-lighten: hsl(40, 100%, 90%); /* Very light yellow for subtle accents */
+
+    --second-color: hsl(100, 35%, 50%); /* Earthy olive green for balance and nature-inspired vibe */
+
+    --title-color: hsl(30, 30%, 25%); /* Dark brownish tone for titles */
+    --text-color: hsl(30, 20%, 40%); /* Neutral brownish-gray for main text */
+    --text-color-light: hsl(30, 30%, 60%); /* Lighter brownish-gray for secondary text */
+
+    --border-color: hsl(40, 50%, 85%); /* Light golden tan for borders */
+    --body-color: hsl(40, 20%, 98%); /* Very light golden tan for background */
+    --container-color: hsl(40, 30%, 92%); /* Slightly darker golden tan for containers */
+  
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Nunito', sans-serif;
+  --heading-font: 'Quicksand', sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  font-family: var(--heading-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: .3s;
+  color: var(--first-color);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--first-color-alt);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button {
+  font-family: var(--body-font);
+  outline: none;
+  border: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+
+.section__title span {
+  color: var(--second-color);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--second-color);
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+/* Navbar container */
+.nav {
+    display: flex;
+    justify-content: space-between; /* Distributes space between the left and right parts */
+    align-items: center; /* Vertically centers items in the navbar */
+    padding: 20px;
+}
+
+/* Container for logo and text on the left */
+.nav__left {
+    display: flex;
+    align-items: center; /* Centers the logo and text vertically */
+}
+
+/* Styling for logo */
+.nav__logo .logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* Styling for text next to the logo */
+.nav__text span {
+    font-size: 18px;
+}
+
+/* Styling for the navigation menu */
+.nav__menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the nav list */
+.nav__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Styling for nav items */
+.nav__item {
+    margin-left: 20px;
+}
+
+/* Styling for nav links */
+.nav__link {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+/* Active link */
+.nav__link.active-link {
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--first-color-alt);
+
+}
+
+/* ================Hero Section Styles==================== */
+.hero {
+    position: relative;
+    background-image: url('../Images/istockphoto-478978988-1024x1024.jpg');
+    background-size: cover;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--title-color);
+    text-align: center;
+}
+
+.hero__content {
+    max-width: 90%;
+    padding: -20px;
+    z-index: 5;
+}
+
+.hero__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 5;
+}
+
+.hero__description {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    z-index: 5;
+}
+
+
+
+/* ======================Holiday home homepage Styles=========================== */
+.holiday-homes {
+    padding: 2rem 0;
+}
+
+.holiday-homes__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.holiday-homes__intro {
+    margin-bottom: 3rem;
+}
+
+.holiday-homes__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+
+.holiday-homes__description {
+    font-size: 1rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ========Grid layout for the holiday homes cards =============*/
+.holiday-homes__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.holiday-homes__card {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.holiday-homes__card:hover {
+    transform: translateY(-5px);
+}
+
+.holiday-homes__image {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.holiday-homes__card-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+.holiday-homes__card-description {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    color: var(--text-color-light);
+}
+
+.holiday-homes__card-button {
+    display: flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+    padding: 14px 20px;
+    border-radius: .25rem;
+    background: var(--first-color);
+    color: var(--body-color);
+    font-weight: var(--font-semi-bold);
+    box-shadow: none;
+    transition: all .3s ease;
+    justify-content: center;
+}
+
+.holiday-homes__card-button:hover {
+    background-color: var(--first-color-alt);
+    color: var(--body-color);
+    text-decoration: none;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 768px) {
+    .holiday-homes__cards {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+    }
+}
+
+
+/*=============== CONTACT ===============*/
+.contact__container {
+    display: flex;
+    justify-content: center; /* Centers the entire container horizontally */
+    align-items: center; /* Vertically centers the container */
+  }
+  
+  .contact__card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center; /* Centers each card horizontally within the grid */
+  }
+  
+  .contact__card-box {
+    background-color: var(--body-color);
+    border: 2px solid var(--border-color);
+    padding: 1.25rem .75rem;
+    border-radius: 1rem;
+    transition: .3s;
+    width: 100%; /* Ensure it spans the available width inside the grid */
+    max-width: 400px; /* Optional: sets a max width to prevent cards from being too wide */
+  }
+  
+  .contact__card-info {
+    display: flex;
+    align-items: center;
+    column-gap: .75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .contact__card i {
+    padding: 6px;
+    background-color: var(--first-color-lighten);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: var(--first-color);
+  }
+  
+  .contact__card-title {
+    font-size: var(--normal-font-size);
+  }
+  
+  .contact__card-description {
+    font-size: var(--smaller-font-size);
+  }
+  
+  .contact__card-button {
+    display: flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+    padding: 14px 14px;
+    border-radius: .25rem;
+    background: var(--body-color);
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    box-shadow: none;
+    transition: all .4s ease;
+    justify-content: center;
+  }
+  
+  .contact__card-button:hover {
+    background-color: var(--first-color);
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .contact__card-box:hover {
+    box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
+  }
+  
+
+/*=============== FOOTER ===============*/
+
+.footer {
+    padding: 30px 20px;
+    font-size: 14px; /* Base font size */
+}
+
+.footer__info {
+    display: flex; /* Makes the container a flexbox */
+    justify-content: space-evenly; /* Ensures the divs are spaced evenly */
+    flex-wrap: wrap; /* Allows content to wrap if needed */
+    font-size: var(--smaller-font-size);
+}
+
+.footer__left,
+.footer__right {
+    padding: 10px;
+}
+
+.footer__left {
+    display: flex;
+    flex-direction: column; /* Stacks the copyright and contact vertically */
+    gap: 10px;
+}
+
+.footer__copy {
+    margin-bottom: 10px; /* Adds some space between copyright and contact details */
+}
+
+.footer__copy a {
+    margin-top: 5px; /* Adds some space between the links */
+}
+
+.footer__right {
+    display: flex;
+    flex-direction: column; /* Stacks company details vertically */ 
+    gap: 10px;
+}
+
+.footer__copy a {
+    margin: 0 0 5px 0; /* Adds some margin to space out the links */
+}
+
+/* Style for the links */
+.footer__copy a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer__copy a:hover {
+    text-decoration: underline;
+}
+
+/* Media query for screens less than 550px */
+@media (max-width: 550px) {
+    .footer__info {
+        flex-direction: column; /* Stack the footer elements vertically */
+        align-items: center; /* Centers the items horizontally */
+        justify-content: center; /* Aligns items with space in the center */
+    }
+
+    .footer__left,
+    .footer__right {
+        flex: none; /* Prevent them from stretching */
+        width: 100%; /* Ensure each takes full width */
+        text-align: center; /* Centers text inside the divs */
+    }
+
+    .footer__left {
+        margin-bottom: 15px; /* Adds spacing between left and center sections */
+    }
+}
+
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: var(--first-color-lighten);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--first-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--first-color-alt);
+  border-radius: .5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width:350px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .section {
+    padding: 3.5rem 0 1rem;
+  }
+
+  .home {
+    padding-bottom: 0;
+  }
+
+  .contact__card {
+    grid-template-columns: repeat(1, 180px);
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1.3rem 1.5rem;
+  }
+
+  .home__value {
+    column-gap: 1rem;
+  }
+
+  .home__img {
+    width: 220px;
+    height: 280px;
+  }
+
+
+  .logos__container {
+    gap: 2rem 1rem;
+  }
+
+}
+
+/* For medium devices */
+@media screen and (min-width:576px) {
+  .nav__menu {
+    width: 342px;
+  }
+
+  .home__search {
+    width: 412px;
+  }
+
+  .contact__card {
+    grid-template-columns: repeat(2, 192px);
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .home__container {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 2rem;
+  }
+
+
+  .home__data {
+    padding-bottom: 2rem;
+  }
+
+  .value__container,
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .contact__card {
+    justify-content: initial;
+  }
+
+  .subscribe__container {
+    padding: 3rem 13rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width:1023px) {
+  .section {
+    padding: 7.5rem 0 1rem;
+  }
+
+  .section__title {
+    font-size: 2.25rem;
+  }
+
+  .section__subtitle {
+    font-size: var(--normal-font-size);
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nav__menu {
+    width: initial;
+    margin-left: auto;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  .nav__link {
+    color: var(--text-color-light);
+  }
+
+  .nav__link i {
+    display: none;
+  }
+
+  .active-link {
+    background: none;
+    box-shadow: none;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+  }
+
+  .change-theme {
+    margin: 0 3rem;
+    color: var(--text-color-light);
+  }
+
+  .scroll-header .nav__link,
+  .scroll-header .change-theme {
+    color: var(--text-color);
+  }
+
+  .scroll-header .active-link {
+    color: var(--first-color);
+  }
+
+  .home {
+    padding-bottom: 0;
+  }
+
+  .home__container {
+    padding-top: 5rem;
+    column-gap: 2rem;
+  }
+
+  .home__data {
+    padding-bottom: 4rem;
+  }
+
+  .home__title {
+    margin-bottom: 2rem;
+  }
+
+  .home__description,
+  .home__search {
+    margin-bottom: 3rem;
+  }
+
+  .home__value {
+    column-gap: 3.5rem;
+  }
+
+  .home__arch {
+    width: 504px;
+    height: 611px;
+    border-radius: 256px 256px 0 0;
+  }
+
+  .home__img {
+    width: 472px;
+    height: 634px;
+    border-radius: 236px 236px 12px 12px;
+    bottom: -2.5rem;
+  }
+
+  .logos__img {
+    height: 100px;
+  }
+
+  .popular__card {
+    width: 320px;
+    padding: .75rem .75rem 2rem;
+  }
+
+  .popular__data {
+    padding: 0 .25rem 0 .75rem;
+  }
+
+  .value__container,
+  .contact__container {
+    align-items: flex-start;
+    column-gap: 5rem;
+  }
+
+  .value__arch,
+  .contact__arch {
+    width: 501px;
+    height: 641px;
+    border-radius: 258px 258px 16px 16px;
+  }
+
+  .value__img,
+  .contact__img {
+    width: 461px;
+    height: 601px;
+    border-radius: 238px 238px 12px 12px;
+  }
+
+  .value__img img,
+  .contact__img img {
+    max-width: initial;
+    width: 490px;
+  }
+
+  .value__description,
+  .contact__description {
+    font-size: var(--normal-font-size);
+    margin-bottom: 2.5rem;
+  }
+
+  .value__accordion-title {
+    font-size: var(--normal-font-size);
+  }
+
+  .value__accordion-item {
+    padding: 1.25rem 1.25rem 1.25rem 1rem;
+  }
+
+  .value__accordion-description {
+    padding-bottom: 1rem;
+    font-size: var(--small-font-size);
+  }
+
+  .contact__card {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  .contact__card-box {
+    padding: 28px 1.5rem 1.5rem ;
+  }
+
+  .subscribe__container {
+    padding: 4rem 10rem 4.5rem;
+    border-radius: 2rem;
+    border: 12px solid var(--first-color-light);
+  }
+
+  .subscribe__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .subscribe__description {
+    font-size: var(--normal-font-size);
+     padding: 0 8rem;
+  }
+
+  .subscribe__button {
+    font-size: var(--normal-font-size);
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(4, max-content);
+  }
+
+  .footer__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer__links {
+    row-gap: 1rem;
+  }
+
+  .footer__info{
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+  }
+
+  .show-scroll {
+    bottom: 3rem;
+    right: 3rem;
+  }
+
+}
+
+@media screen and (min-width: 1040px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__container {
+    column-gap: 4rem;
+  }
+
+}
+
+/* For 2K & 4K resolutions */
+@media screen and (min-width: 2040px) {
+  body {
+    zoom: 1.5;
+  }
+}
+@media screen and (min-width: 3840px) {
+  body {
+    zoom: 2;
+  }
+}
