@@ -57,8 +57,6 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero__content container">
-            <h1 class="hero__title">Hofje</h1>
-            <p class="hero__description"></p>
         </div>
     </section>
     
@@ -116,6 +114,11 @@
                 <h4>Private Parking</h4>
                 <p>Park your vehicles in the private parking area, with space for multiple cars.</p>
             </div>
+            <div class="amenities__cards">
+                <i class="fa-solid fa-paw" id="no__pets__allowed__icon"></i>
+                <h4>No pets</h4>
+                <p>Sorry, pets are not allowed.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -128,26 +131,74 @@
         <h2 class="gallery__title">Gallery</h2>
         <div class="gallery__grid">
             <div class="gallery__item">
-                <img src="./resources/Images/b" alt="Beautiful living room">
+                <img src="./resources/Images/parking.jpg" alt="Parking" onclick="openModal(0)">
             </div>
             <div class="gallery__item">
-                <img src="./resources/Images/gallery2.jpg" alt="Scenic countryside view">
+                <img src="./resources/Images/buiten1.jpg" alt="Outdoor grill house" onclick="openModal(1)">
             </div>
             <div class="gallery__item">
-                <img src="./resources/Images/gallery3.jpg" alt="Cozy bedroom">
+                <img src="./resources/Images/buiten2.JPEG" alt="Outdoor swimming pool" onclick="openModal(2)">
             </div>
             <div class="gallery__item">
-                <img src="./resources/Images/gallery4.jpg" alt="Modern kitchen">
+                <img src="./resources/Images/buiten5.jpg" alt="grill are" onclick="openModal(3)">
             </div>
             <div class="gallery__item">
-                <img src="./resources/Images/gallery5.jpg" alt="Outdoor patio">
+                <img src="./resources/Images/hal2.jpg" alt="Entrance" onclick="openModal(4)">
             </div>
             <div class="gallery__item">
-                <img src="./resources/Images/gallery6.jpg" alt="Private swimming pool">
+                <img src="./resources/Images/hal1.jpg" alt="entrance" onclick="openModal(5)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/keuken1.jpg" alt="Kitchen" onclick="openModal(6)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/eetkamer2.jpg" alt="Dining room" onclick="openModal(7)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/woonkamer1.jpg" alt="Living room" onclick="openModal(8)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/woonkamer2.jpg" alt="Living room" onclick="openModal(9)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/overloop1.jpg" alt="Landing" onclick="openModal(10)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/overloop2.jpg" alt="Landing" onclick="openModal(11)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/slaapkamer1.jpg" alt="Bedroom" onclick="openModal(12)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/slaapkamer2.jpg" alt="Bedroom" onclick="openModal(13)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/slaapkamer3.jpg" alt="Bedroom" onclick="openModal(14)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/slaapkamer4.jpg" alt="Bedroom" onclick="openModal(15)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/badkamer1.JPEG" alt="Bathroom" onclick="openModal(16)">
+            </div>
+            <div class="gallery__item">
+                <img src="./resources/Images/badkamer2.jpg" alt="Bathroom" onclick="openModal(17)">
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modal Structure -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-navigation">
+        <button id="prevBtn" class="prev">←</button>
+        <button id="nextBtn" class="next">→</button>
+    </div>
+</div>
+
+
 
 
 
@@ -212,6 +263,7 @@
 
     <!--js-->
     <script src="https://kit.fontawesome.com/56e9e1144f.js" crossorigin="anonymous"></script>
+    <script src="./resources/JS/modal.js"></script>
 </body>
 
 </html>
