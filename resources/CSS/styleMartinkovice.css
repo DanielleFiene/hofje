@@ -266,7 +266,7 @@ button {
 }
 
 .amenities__cards i {
-    padding: 6px;
+    padding: 10px;
     background-color: var(--first-color-lighten);
     border: 1px solid var(--second-color);
     border-radius: 50%;
@@ -276,7 +276,7 @@ button {
 }
 
 #no__pets__allowed__icon {
-  padding: 6px;
+  padding: 10px;
   background-color: var(--first-color-lighten);
   border: 1px solid #B7410E;
   border-radius: 50%;
