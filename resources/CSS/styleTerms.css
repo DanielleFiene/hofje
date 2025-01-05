@@ -280,7 +280,7 @@ button {
     background-image: url('../Images/KerkjeSonov.jpg');
     background-size: cover;
     background-position: center;
-    height: 800px; /* Default height for large screens */
+    height: 900px; /* Default height for large screens */
     display: flex;
     justify-content: center;
     align-items: flex-start;
