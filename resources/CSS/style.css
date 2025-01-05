@@ -65,6 +65,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -72,6 +74,8 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h1,
@@ -146,99 +150,214 @@ button {
 /*=============== HEADER & NAV ===============*/
 /* Navbar container */
 .nav {
-    display: flex;
-    justify-content: space-between; /* Distributes space between the left and right parts */
-    align-items: center; /* Vertically centers items in the navbar */
-    padding: 20px;
+  display: flex;
+  justify-content: space-between; /* Distributes space between the left and right parts */
+  align-items: center; /* Vertically centers items in the navbar */
+  padding: 20px;
+  position: relative; /* Ensures that the menu is positioned correctly */
 }
 
 /* Container for logo and text on the left */
 .nav__left {
-    display: flex;
-    align-items: center; /* Centers the logo and text vertically */
+  display: flex;
+  align-items: center; /* Centers the logo and text vertically */
 }
 
 /* Styling for logo */
 .nav__logo .logo {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 5px;
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 
 /* Styling for text next to the logo */
 .nav__text span {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 /* Styling for the navigation menu */
 .nav__menu {
-    display: flex;
-    align-items: center;
-}
-
-/* Styling for the nav list */
-.nav__list {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Styling for nav items */
 .nav__item {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 /* Styling for nav links */
 .nav__link {
-    text-decoration: none;
-    font-size: 16px;
+  text-decoration: none;
+  font-size: 16px;
 }
-
 
 /* Active link */
 .nav__link.active-link {
   border-radius: 5px;
   font-weight: bold;
   color: var(--first-color-alt);
-
 }
 
-/* ================Hero Section Styles==================== */
-.hero {
-    position: relative;
-    background-image: url('../Images/istockphoto-478978988-1024x1024.jpg');
-    background-size: cover;
-    height: 800px;
+/*=============== HAMBURGER MENU ===============*/
+/* Hide the regular menu on small screens by default */
+.nav__menu {
+  display: flex;
+}
+
+/* Hide the regular menu on small screens */
+.nav__hamburger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Hamburger bars style */
+.nav__hamburger div {
+  width: 100%;
+  height: 5px;
+  background-color: var(--first-color);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile menu styling when active */
+.nav__menu.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Add a slight animation for the items when the menu is open */
+.nav__menu.open .nav__item {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Style the links inside the mobile menu */
+.nav__menu.open .nav__link {
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* ================== Media query for small screens ================== */
+@media screen and (max-width: 768px) {
+  /* Hide the regular nav menu */
+  .nav__menu {
+    display: none;
+  }
+
+  /* Show the hamburger icon on small screens */
+  .nav__hamburger {
+    display: block;
+  }
+
+  /* When the menu is open, show it */
+  .nav__menu.open {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    color: var(--title-color);
-    text-align: center;
+  }
+}
+
+
+/* ================ Hero Section Styles ==================== */
+.hero {
+  position: relative;
+  background-image: url('../Images/istockphoto-478978988-1024x1024.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 800px; /* Default height for large screens */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--title-color);
+  text-align: center;
 }
 
 .hero__content {
-    max-width: 90%;
-    padding: -20px;
-    z-index: 5;
+  max-width: 90%;
+  z-index: 5;
+  margin-top: -1rem;
 }
 
 .hero__title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 5;
+  font-size: 3rem; /* Default font size for large screens */
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 5;
 }
 
 .hero__description {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    z-index: 5;
+  font-size: 1.25rem; /* Default font size for large screens */
+  margin-bottom: 20px;
+  line-height: 1.6;
+  z-index: 5;
 }
+
+/* ================ Responsive Styles ==================== */
+
+/* For medium-sized devices (tablets) */
+@media (max-width: 1024px) {
+  .hero {
+      height: 600px; /* Reduced height for tablets */
+  }
+
+  .hero__title {
+      font-size: 2.5rem; /* Smaller title font size */
+  }
+
+  .hero__description {
+      font-size: 1.1rem; /* Smaller description font size */
+  }
+}
+
+/* For small devices (smartphones) */
+@media (max-width: 768px) {
+  .hero {
+      height: 400px; /* Further reduced height for mobile */
+  }
+
+  .hero__title {
+      font-size: 2rem; /* Even smaller title font size */
+  }
+
+  .hero__description {
+      font-size: 1rem; /* Smaller description font size */
+      margin-bottom: 15px; /* Less space for mobile */
+  }
+}
+
+/* For very small devices (extra small phones) */
+@media (max-width: 480px) {
+  .hero {
+      height: 300px; /* Height adjustment for very small screens */
+  }
+
+  .hero__title {
+      font-size: 1.75rem; /* Even smaller title font size */
+  }
+
+  .hero__description {
+      font-size: 0.9rem; /* Smaller font size for description */
+  }
+}
+
 
 
 
@@ -261,7 +380,7 @@ button {
 .holiday-homes__title {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -347,6 +466,11 @@ button {
     justify-content: center; /* Centers the entire container horizontally */
     align-items: center; /* Vertically centers the container */
   }
+
+  .contact__title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
   
   .contact__card {
     display: grid;
@@ -411,8 +535,69 @@ button {
   
   .contact__card-box:hover {
     box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
-  }
+  } 
   
+  /* ===================== Location Styles ====================== */
+.location {
+  padding: 2rem;
+}
+
+.location__title {
+  text-align: center; /* Center the title */
+  margin-bottom: 2rem; /* Space between the title and the grid */
+}
+
+.location__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 2rem; /* Gap between columns */
+  max-width: 700px; /* Limit the width */
+  margin: 0 auto; /* Center the container */
+}
+
+.location__cards {
+  background-color: var(--body-color);
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.location__card-info {
+  margin-bottom: 1rem;
+}
+
+.location__card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.location__card-description {
+  font-size: var(--smaller-font-size);
+  margin-bottom: 1rem;
+}
+
+.location__cards iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+  .location__container {
+      grid-template-columns: 1fr; /* Stack the columns on smaller screens */
+  }
+}
+
+  #google-maps-icon {
+    padding: 6px;
+    font-size: 1.25rem;
+    color: #DB4437;  
+  }
 
 /*=============== FOOTER ===============*/
 

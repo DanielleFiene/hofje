@@ -11,7 +11,7 @@
     --first-color-light: hsl(40, 50%, 70%); /* Light golden yellow for backgrounds */
     --first-color-lighten: hsl(40, 100%, 90%); /* Very light yellow for subtle accents */
 
-    --second-color: hsl(180, 20%, 45%); /* Earthy olive green for balance and nature-inspired vibe */
+    --second-color: hsl(210, 30%, 50%); /* Earthy olive green for balance and nature-inspired vibe */
 
     --title-color: hsl(30, 30%, 25%); /* Dark brownish tone for titles */
     --text-color: hsl(30, 20%, 40%); /* Neutral brownish-gray for main text */
@@ -64,19 +64,19 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
-  width: 100%;
-  overflow-x: hidden;
-}
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    width: 100%;
+    overflow-x: hidden;
+  }
 
 h1,
 h2,
@@ -150,271 +150,284 @@ button {
 /*=============== HEADER & NAV ===============*/
 /* Navbar container */
 .nav {
-  display: flex;
-  justify-content: space-between; /* Distributes space between the left and right parts */
-  align-items: center; /* Vertically centers items in the navbar */
-  padding: 20px;
-  position: relative; /* Ensures that the menu is positioned correctly */
-}
-
-/* Container for logo and text on the left */
-.nav__left {
-  display: flex;
-  align-items: center; /* Centers the logo and text vertically */
-}
-
-/* Styling for logo */
-.nav__logo .logo {
-  width: 40px;
-  height: auto;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-/* Styling for text next to the logo */
-.nav__text span {
-  font-size: 18px;
-}
-
-/* Styling for the navigation menu */
-.nav__menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Styling for nav items */
-.nav__item {
-  margin-left: 20px;
-}
-
-/* Styling for nav links */
-.nav__link {
-  text-decoration: none;
-  font-size: 16px;
-}
-
-/* Active link */
-.nav__link.active-link {
-  border-radius: 5px;
-  font-weight: bold;
-  color: var(--first-color-alt);
-}
-
-/*=============== HAMBURGER MENU ===============*/
-/* Hide the regular menu on small screens by default */
-.nav__menu {
-  display: flex;
-}
-
-/* Hide the regular menu on small screens */
-.nav__hamburger {
-  display: none;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-/* Hamburger bars style */
-.nav__hamburger div {
-  width: 100%;
-  height: 5px;
-  background-color: var(--first-color);
-  margin: 5px 0;
-  transition: all 0.3s ease;
-}
-
-/* Mobile menu styling when active */
-.nav__menu.open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 80px;
-  right: 20px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-}
-
-/* Add a slight animation for the items when the menu is open */
-.nav__menu.open .nav__item {
-  margin: 10px 0;
-  text-align: center;
-}
-
-/* Style the links inside the mobile menu */
-.nav__menu.open .nav__link {
-  font-size: 18px;
-  padding: 10px;
-}
-
-/* ================== Media query for small screens ================== */
-@media screen and (max-width: 768px) {
-  /* Hide the regular nav menu */
+    display: flex;
+    justify-content: space-between; /* Distributes space between the left and right parts */
+    align-items: center; /* Vertically centers items in the navbar */
+    padding: 20px;
+    position: relative; /* Ensures that the menu is positioned correctly */
+  }
+  
+  /* Container for logo and text on the left */
+  .nav__left {
+    display: flex;
+    align-items: center; /* Centers the logo and text vertically */
+  }
+  
+  /* Styling for logo */
+  .nav__logo .logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Styling for text next to the logo */
+  .nav__text span {
+    font-size: 18px;
+  }
+  
+  /* Styling for the navigation menu */
   .nav__menu {
-    display: none;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
-
-  /* Show the hamburger icon on small screens */
-  .nav__hamburger {
-    display: block;
+  
+  /* Styling for nav items */
+  .nav__item {
+    margin-left: 20px;
   }
-
-  /* When the menu is open, show it */
-  .nav__menu.open {
+  
+  /* Styling for nav links */
+  .nav__link {
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  /* Active link */
+  .nav__link.active-link {
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--first-color-alt);
+  }
+  
+  /*=============== HAMBURGER MENU ===============*/
+  /* Hide the regular menu on small screens by default */
+  .nav__menu {
     display: flex;
   }
-}
-
+  
+  /* Hide the regular menu on small screens */
+  .nav__hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  /* Hamburger bars style */
+  .nav__hamburger div {
+    width: 100%;
+    height: 5px;
+    background-color: var(--first-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Mobile menu styling when active */
+  .nav__menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+  
+  /* Add a slight animation for the items when the menu is open */
+  .nav__menu.open .nav__item {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  /* Style the links inside the mobile menu */
+  .nav__menu.open .nav__link {
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  /* ================== Media query for small screens ================== */
+  @media screen and (max-width: 768px) {
+    /* Hide the regular nav menu */
+    .nav__menu {
+      display: none;
+    }
+  
+    /* Show the hamburger icon on small screens */
+    .nav__hamburger {
+      display: block;
+    }
+  
+    /* When the menu is open, show it */
+    .nav__menu.open {
+      display: flex;
+    }
+  }
+  
 
 /* ================ Hero Section Styles ==================== */
 .hero {
-  position: relative;
-  background-image: url('../Images/Martinkovice_main.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 800px; /* Default height for large screens */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  color: var(--title-color);
-  text-align: center;
+    position: relative;
+    background-image: url('../Images/KerkjeSonov.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 800px; /* Default height for large screens */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--title-color);
+    text-align: center;
 }
 
 .hero__content {
-  max-width: 90%;
-  padding: 20px; /* Adjusted padding */
-  z-index: 5;
+    max-width: 90%;
+    padding: 20px; /* Adjusted padding */
+    z-index: 5;
 }
 
 .hero__title {
-  font-size: 3rem; /* Default font size for large screens */
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 5;
+    font-size: 3rem; /* Default font size for large screens */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 5;
 }
 
 .hero__description {
-  font-size: 1.25rem; /* Default font size for large screens */
-  margin-bottom: 20px;
-  line-height: 1.6;
-  z-index: 5;
+    font-size: 1.25rem; /* Default font size for large screens */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    z-index: 5;
 }
 
 /* ================ Responsive Styles ==================== */
 
 /* For medium-sized devices (tablets) */
 @media (max-width: 1024px) {
-  .hero {
-      height: 600px; /* Reduced height for tablets */
-  }
+    .hero {
+        height: 600px; /* Reduced height for tablets */
+    }
 
-  .hero__title {
-      font-size: 2.5rem; /* Smaller title font size */
-  }
+    .hero__title {
+        font-size: 2.5rem; /* Smaller title font size */
+    }
 
-  .hero__description {
-      font-size: 1.1rem; /* Smaller description font size */
-  }
+    .hero__description {
+        font-size: 1.1rem; /* Smaller description font size */
+    }
 }
 
 /* For small devices (smartphones) */
 @media (max-width: 768px) {
-  .hero {
-      height: 400px; /* Further reduced height for mobile */
-  }
+    .hero {
+        height: 400px; /* Further reduced height for mobile */
+    }
 
-  .hero__title {
-      font-size: 2rem; /* Even smaller title font size */
-  }
+    .hero__title {
+        font-size: 2rem; /* Even smaller title font size */
+    }
 
-  .hero__description {
-      font-size: 1rem; /* Smaller description font size */
-      margin-bottom: 15px; /* Less space for mobile */
-  }
+    .hero__description {
+        font-size: 1rem; /* Smaller description font size */
+        margin-bottom: 15px; /* Less space for mobile */
+    }
 }
 
 /* For very small devices (extra small phones) */
 @media (max-width: 480px) {
-  .hero {
-      height: 300px; /* Height adjustment for very small screens */
-  }
+    .hero {
+        height: 300px; /* Height adjustment for very small screens */
+    }
 
-  .hero__title {
-      font-size: 1.75rem; /* Even smaller title font size */
-  }
+    .hero__title {
+        font-size: 1.75rem; /* Even smaller title font size */
+    }
 
-  .hero__description {
-      font-size: 0.9rem; /* Smaller font size for description */
-  }
+    .hero__description {
+        font-size: 0.9rem; /* Smaller font size for description */
+    }
 }
 
 
-/* ========================== Description Styles ===================*/
-.description {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.description__title {
-    margin-bottom: 1rem;
-}
-
-/* ===================== Amenities Styles ====================== */
-.amenities {
+/* ===================== Prices and Terms Styles ====================== */
+.prices {
     padding: 2rem;
 }
 
-.amenities__title {
+.prices__title {
     margin-bottom: 2rem;
 }
 
-.amenities__container {
+.prices__container {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.amenities__cards i {
-    padding: 10px;
-    background-color: var(--first-color-lighten);
-    border: 1px solid var(--second-color);
-    border-radius: 50%;
+.prices-homes__card p {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    text-align: left; /* Align text for better readability */
+}
+
+.prices-homes__card strong {
+    margin-right: 5px;
+}
+
+.prices-homes__card ul {
+    padding-left: 0.5rem; /* Indent the list */
+    list-style-type: none; /* Remove default bullets */
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+.prices-homes__card ul li {
+    display: flex;
+    align-items: center;  /* This will vertically align the text with the icon */
+    font-size: var(--small-font-size);
+}
+
+.prices-homes__card ul li::before {
+    content: ""; /* Required for the custom list item */
+    display: inline-block;
+    width: 16px; /* Icon size */
+    height: 16px;
+    background-image: url('../Images/iconLogo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.prices-homes__card strong {
+    color: var(--second-color); /* Highlighted text color */
+}
+
+#google-maps-icon {
+    padding: 6px;
     font-size: 1.25rem;
-    color: var(--second-color);
-    margin-bottom: 0.75rem;
+    color: #DB4437;  
 }
 
-#no__pets__allowed__icon {
-  padding: 10px;
-  background-color: var(--first-color-lighten);
-  border: 1px solid #B7410E;
-  border-radius: 50%;
-  font-size: 1.25rem;
-  color: #B7410E;
-  margin-bottom: 0.75rem;
-}
-
-/* Grid layout for the amenities section */
-.amenities__grid {
+/* Grid layout for the prices section */
+.prices__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
     gap: 2rem;
     width: 100%;
     max-width: 1200px; /* Limit width for larger screens */
 }
 
-/* Style for individual amenities cards */
-.amenities__cards {
+.prices__cards {
     background-color: var(--container-color);
     padding: 1rem;
     border-radius: 1rem;
@@ -423,215 +436,43 @@ button {
     transition: transform 0.3s;
 }
 
-/* Responsive Styles for smaller screens */
-@media (max-width: 768px) {
-    .amenities__grid {
-        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+/* ===================== Responsive Styles ====================== */
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+    .prices__grid {
+        grid-template-columns: repeat(2, 1fr); /* Keep two columns */
+        gap: 1.5rem; /* Reduce gap for smaller screens */
     }
 }
 
+/* For small screens (Mobile) */
+@media (max-width: 768px) {
+    .prices__grid {
+        grid-template-columns: 1fr; /* 1 column layout for smaller screens */
+        gap: 1.25rem;
+    }
+
+    .prices-homes__card p {
+        font-size: 1rem; /* Increase font size for readability */
+    }
+
+    .prices-homes__card ul li {
+        font-size: 1rem; /* Adjust font size for better readability on small screens */
+    }
+}
+
+/* For very small screens */
 @media (max-width: 480px) {
-    .amenities__grid {
-        grid-template-columns: 1fr; /* 1 column layout for very small screens */
+    .prices__grid {
+        grid-template-columns: 1fr; /* Ensure 1 column layout */
+    }
+
+    .prices-homes__card p {
+        font-size: 1.1rem; /* Slightly increase font size */
     }
 }
 
-/*======================== Gallery Styles ====================================*/
-.gallery {
-    padding: 2rem;
-}
-
-.gallery__title {
-    margin-bottom: 2rem;
-}
-
-.gallery__container {
-    text-align: center;
-}
-
-.gallery__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
-    gap: 1rem;
-    width: 100%;
-    max-width: 1200px; /* Limit width for larger screens */
-}
-
-/* Style for each gallery item */
-.gallery__item img {
-    width: 100%;
-    height: 200px!important;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-/* Hover effect for images */
-.gallery__item img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-/* Responsive Styles for smaller screens */
-@media (max-width: 768px) {
-    .gallery__grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns layout on smaller screens */
-        grid-template-rows: auto; /* Adjust rows automatically */
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery__grid {
-        grid-template-columns: 1fr; /* 1 column layout for very small screens */
-        grid-template-rows: auto; /* Adjust rows automatically */
-    }
-}
-
-/* Ensure images are correctly displayed and clickable */
-.gallery__item img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-
-/* ===================== Modal Styling =============== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-  position: relative;
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 80%;
-}
-
-#modalImage {
-  width: 60%;
-  height: auto;
-  border-radius: 10px;
-  margin: 0 auto;
-  display: block;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  padding: 1rem;
-  border-radius: 0.25rem;
-  font-size: 40px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: .3s;
-}
-
-.close:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #B7410E;
-}
-
-.modal-navigation {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.prev, .next {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 30px;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  transition: .3s;
-  border-radius: 0.25rem;
-  margin: 0 1.5rem 0 1.5rem;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: var(--second-color);
-}
-
-/* ===================== Location Styles ====================== */
-.location {
-  padding: 2rem;
-}
-
-.location__title {
-  text-align: center; /* Center the title */
-  margin-bottom: 2rem; /* Space between the title and the grid */
-}
-
-.location__container {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column for the single card */
-  gap: 2rem; /* Gap between the card and the container */
-  max-width: 350px; /* Limit the width */
-  margin: 0 auto; /* Center the container */
-}
-
-.location__cards {
-  background-color: var(--body-color);
-  padding: 1rem;
-  border: 2px solid var(--border-color);
-  border-radius: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  /* Keep the card size consistent with the previous two-card layout */
-  width: 100%; 
-  max-width: 700px; 
-  margin: 0 auto;
-}
-
-.location__card-info {
-  margin-bottom: 1rem;
-}
-
-.location__card-title {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.location__card-description {
-  font-size: var(--smaller-font-size);
-  margin-bottom: 1rem;
-}
-
-.location__cards iframe {
-  width: 100%;
-  height: 300px; /* Maintain consistent iframe height */
-  border: 0;
-  border-radius: 8px;
-}
-
-/* Responsive Styles for smaller screens */
-@media (max-width: 768px) {
-  .location__container {
-    grid-template-columns: 1fr; /* Stack the single card on smaller screens */
-  }
-}
-
-#google-maps-icon {
-  padding: 6px;
-  font-size: 1.25rem;
-  color: #DB4437;  
-}
 
 
 /*=============== CONTACT ===============*/
@@ -645,7 +486,7 @@ button {
     text-align: center;
     margin-bottom: 2rem;
   }
-    
+  
   .contact__card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -709,9 +550,8 @@ button {
   
   .contact__card-box:hover {
     box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
-  }
+  } 
   
-
 /*=============== FOOTER ===============*/
 
 .footer {
@@ -1049,6 +889,26 @@ button {
 
   .contact__card-box {
     padding: 28px 1.5rem 1.5rem ;
+  }
+
+  .subscribe__container {
+    padding: 4rem 10rem 4.5rem;
+    border-radius: 2rem;
+    border: 12px solid var(--first-color-light);
+  }
+
+  .subscribe__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .subscribe__description {
+    font-size: var(--normal-font-size);
+     padding: 0 8rem;
+  }
+
+  .subscribe__button {
+    font-size: var(--normal-font-size);
   }
 
   .footer__content {

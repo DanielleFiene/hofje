@@ -277,7 +277,7 @@ button {
 /* ================ Hero Section Styles ==================== */
 .hero {
   position: relative;
-  background-image: url('../Images/Martinkovice_main.jpg');
+  background-image: url('../Images/Sonov_main.jpg');
   background-size: cover;
   background-position: center;
   height: 800px; /* Default height for large screens */
@@ -633,19 +633,18 @@ button {
   color: #DB4437;  
 }
 
-
 /*=============== CONTACT ===============*/
 .contact__container {
     display: flex;
     justify-content: center; /* Centers the entire container horizontally */
     align-items: center; /* Vertically centers the container */
   }
-
+  
   .contact__title {
     text-align: center;
     margin-bottom: 2rem;
   }
-    
+  
   .contact__card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
