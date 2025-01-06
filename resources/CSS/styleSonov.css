@@ -279,9 +279,8 @@ button {
   position: relative;
   background-image: url('../Images/Sonov_main.jpg');
   background-size: cover;
-  height: 900px; /* Default height for large screens */
+  height: 1100px; /* Default height for large screens */
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   color: var(--title-color);
   text-align: center;

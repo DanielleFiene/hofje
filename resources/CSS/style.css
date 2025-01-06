@@ -279,8 +279,7 @@ button {
   position: relative;
   background-image: url('../Images/istockphoto-478978988-1024x1024.jpg');
   background-size: cover;
-  background-position: center;
-  height: 800px; /* Default height for large screens */
+  height: 1100px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -291,11 +290,11 @@ button {
 .hero__content {
   max-width: 90%;
   z-index: 5;
-  margin-top: -1rem;
+  margin-top: 1rem;
 }
 
 .hero__title {
-  font-size: 3rem; /* Default font size for large screens */
+  
   font-weight: bold;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -304,7 +303,7 @@ button {
 }
 
 .hero__description {
-  font-size: 1.25rem; /* Default font size for large screens */
+  font-size: 1.25rem; 
   margin-bottom: 20px;
   line-height: 1.6;
   z-index: 5;
