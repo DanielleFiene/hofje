@@ -374,7 +374,7 @@ button {
 }
 
 .prices-homes__card p {
-    font-size: 0.9rem;
+    font-size: var(--normal-font-size);
     margin: 1rem 0;
     text-align: left; /* Align text for better readability */
 }
@@ -457,7 +457,7 @@ button {
     }
 
     .prices-homes__card ul li {
-        font-size: 1rem; /* Adjust font size for better readability on small screens */
+        font-size: var(--smaller-font-size); /* Adjust font size for better readability on small screens */
     }
 }
 
