@@ -277,7 +277,7 @@ button {
 /* ================ Hero Section Styles ==================== */
 .hero {
   position: relative;
-  background-image: url('../Images/Martinkovice_main.jpg');
+  background-image: url('../Images/Martinkovice_main.webp');
   background-size: cover;
   background-position: center;
   height: 1100px; /* Default height for large screens */
