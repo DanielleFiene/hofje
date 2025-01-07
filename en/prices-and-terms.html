@@ -8,12 +8,12 @@
     <meta name="author" content="Danielle Fiene">
     <meta name="description" content="Holiday rentals in the Czech Republic.">
     <meta name="keywords" content="holiday homes, vacation rentals, Czech Republic holiday homes, holiday cottages, Broumov holiday homes, short-term rentals Czech Republic, family vacation homes, Czech countryside vacation, private holiday cottages, family-friendly rentals, vacation properties, weekend getaways Czech Republic, rent holiday home in Czech Republic">
-    <link rel="apple-touch-icon" sizes="180x180" href="./resources/Images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../resources/Images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./resources/Images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./resources/Images/favicon-16x16.png">
-    <link rel="manifest" href="./resources/Images/site.webmanifest">
-    <link href="./resources/CSS/normalize.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./resources/CSS/styleTerms.css" type="text/css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../resources/Images/favicon-16x16.png">
+    <link rel="manifest" href="../resources/Images/site.webmanifest">
+    <link href="../resources/CSS/normalize.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../resources/CSS/styleTerms.css" type="text/css">
     <title>Hofje.cz | Holiday Homes & Vacation Rentals in the Czech Republic</title>
 </head>
 <body class="">
@@ -23,7 +23,7 @@
         <nav class="nav container">
             <div class="nav__left">
                 <div class="nav__logo">
-                    <a href="index.html"><img src="./resources/Images/logo.png" alt="Logo" class="logo"></a>
+                    <a href="index.html"><img src="../resources/Images/logo.png" alt="Logo" class="logo"></a>
                 </div>
                 <div class="nav__text">
                     <span>Hofje.cz</span>
@@ -39,7 +39,7 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link">
+                        <a href="index.html" class="nav__link active-link">
                             <span>Home</span>
                         </a>
                     </li>
@@ -54,11 +54,20 @@
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a href="prices-and-terms.html" class="nav__link active-link">
+                        <a href="prices-and-terms.html" class="nav__link">
                             <span>Prices & Terms</span>
                         </a>
                     </li>
                 </ul>
+
+                 <!-- Language flags container on the right side -->
+            <div class="nav__flags">
+                <a href="index.html" class="lang-option" data-lang="en" title="English"><img src="../resources/Images/Flag_of_the_United_Kingdom.svg.webp" alt="English"></a>
+                <a href="#" class="lang-option" data-lang="cz" title="Czech"><img src="../resources/Images/Flag_of_the_Czech_Republic.svg.png" alt="Czech"></a>
+                <a href="#" class="lang-option" data-lang="de" title="German"><img src="../resources/Images/Flag_of_Germany.svg.png" alt="German"></a>
+                <a href="#" class="lang-option" data-lang="pl" title="French"><img src="../resources/Images/Flag_of_Poland.svg.png" alt="Polish"></a>
+            </div>
+
             </div>
         </nav>
     </header>
@@ -175,17 +184,28 @@
             <a href="tel:+420602454868">Tel: +420 602 454 868</a>
         </div>
 
+        <div class="footer__center">
+            <span class="footer__company">Address:<br>
+                Křinice 133<br>
+                55001 Křinice<br>
+                Czech Republic<br>
+            </span>
+        </div>
+
         <div class="footer__right">
-            <span class="footer__company">Company Details:</span>
-            <p>East Port Invest s.r.o.</p>
-            <p>Company ID: 12345678</p>
+            <span class="footer__company">Company Details:<br>
+            East Port Invest s.r.o.<br>
+            CIN/IČO: 27169481<br>
+            TIN/DIČ: CZ27169481<br>
+            </span>
+            
         </div>
     </div>
 </footer>
 
     <!--js-->
     <script src="https://kit.fontawesome.com/56e9e1144f.js" crossorigin="anonymous"></script>
-    <script src="./resources/JS/hamburger.js"></script>
+    <script src="../resources/JS/hamburger.js"></script>
 </body>
 
 </html>
