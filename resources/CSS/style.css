@@ -35,7 +35,7 @@
   --smaller-font-size: .75rem;
 
   /*========== Font weight ==========*/
-  --font-medium: 500;
+  --font-medium: 600;
   --font-semi-bold: 600;
 
   /*========== z index ==========*/
@@ -53,6 +53,18 @@
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1.2rem;
+    --small-font-size: 1rem;
+    --smaller-font-size: 1rem;
   }
 }
 
@@ -76,8 +88,9 @@ body {
   color: var(--text-color);
   width: 100%;
   overflow-x: hidden;
-    line-height: 1.4;
+  line-height: 1.4;
   letter-spacing: 0.02em;
+  font-weight: var(--font-medium);
 }
 
 h1,
@@ -458,7 +471,7 @@ button {
 }
 
 .holiday-homes__card-description {
-    font-size: 1rem;
+    font-size: var(--normal-font-size);
     margin-bottom: 3rem;
     color: var(--text-color-light);
 }
@@ -608,7 +621,7 @@ button {
 }
 
 .location__card-description {
-  font-size: var(--smaller-font-size);
+  font-size: var(--normal-font-size);
   margin-bottom: 1rem;
 }
 
