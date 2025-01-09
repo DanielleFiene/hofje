@@ -557,7 +557,11 @@ button {
 }
 
 #modalImage {
-  width: 60%;
+  position: absolute;
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* Adjust by 50% of the image's width and height to truly center */
+  width: 60%; /* You can adjust this percentage to your preference */
   height: auto;
   border-radius: 10px;
   margin: 0 auto;
@@ -606,6 +610,7 @@ button {
   background-color: rgba(0, 0, 0, 0.7);
   color: var(--second-color);
 }
+
 
 /* ===================== Location Styles ====================== */
 .location {
@@ -675,80 +680,84 @@ button {
 
 /*=============== CONTACT ===============*/
 .contact__container {
-    display: flex;
-    justify-content: center; /* Centers the entire container horizontally */
-    align-items: center; /* Vertically centers the container */
-  }
-  
-  .contact__title {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .contact__card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    justify-items: center; /* Centers each card horizontally within the grid */
-  }
-  
-  .contact__card-box {
-    background-color: var(--body-color);
-    border: 2px solid var(--border-color);
-    padding: 1.25rem .75rem;
-    border-radius: 1rem;
-    transition: .3s;
-    width: 100%; /* Ensure it spans the available width inside the grid */
-    max-width: 400px; /* Optional: sets a max width to prevent cards from being too wide */
-  }
-  
-  .contact__card-info {
-    display: flex;
-    align-items: center;
-    column-gap: .75rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  .contact__card i {
-    padding: 6px;
-    background-color: var(--first-color-lighten);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    font-size: 1.25rem;
-    color: var(--first-color);
-  }
-  
-  .contact__card-title {
-    font-size: var(--normal-font-size);
-  }
-  
-  .contact__card-description {
-    font-size: var(--smaller-font-size);
-  }
-  
-  .contact__card-button {
-    display: flex;
-    align-items: center;
-    font-size: var(--small-font-size);
-    padding: 14px 14px;
-    border-radius: .25rem;
-    background: var(--body-color);
-    color: var(--first-color);
-    font-weight: var(--font-semi-bold);
-    box-shadow: none;
-    transition: all .4s ease;
-    justify-content: center;
-  }
-  
-  .contact__card-button:hover {
-    background-color: var(--first-color);
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .contact__card-box:hover {
-    box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
-  }
+  display: flex;
+  justify-content: center; /* Centers the entire container horizontally */
+  align-items: center; /* Vertically centers the container */
+}
+
+.contact__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center; /* Centers each card horizontally within the grid */
+}
+
+.contact__card-box {
+  display: flex;
+  flex-direction: column; /* Arrange elements vertically */
+  justify-content: space-between; /* Push the button to the bottom */
+  background-color: var(--body-color);
+  border: 2px solid var(--border-color);
+  padding: 1.25rem .75rem;
+  border-radius: 1rem;
+  transition: .3s;
+  width: 100%; /* Ensure it spans the available width inside the grid */
+  max-width: 400px; /* Optional: sets a max width to prevent cards from being too wide */
+}
+
+.contact__card-info {
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact__card i {
+  padding: 6px;
+  background-color: var(--first-color-lighten);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
+.contact__card-title {
+  font-size: var(--normal-font-size);
+}
+
+.contact__card-description {
+  font-size: var(--smaller-font-size);
+}
+
+.contact__card-button {
+  margin-top: auto; /* Pushes the button to the bottom of the container */
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center;
+  font-size: var(--small-font-size);
+  padding: 14px 14px;
+  border-radius: .25rem;
+  background: var(--body-color);
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  box-shadow: none;
+  transition: all .4s ease;
+}
+
+.contact__card-button:hover {
+  background-color: var(--first-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact__card-box:hover {
+  box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
+} 
 
 /* ===================== Booking.com Styles ====================== */
 .booking {

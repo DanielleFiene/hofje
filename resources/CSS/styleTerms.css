@@ -396,196 +396,277 @@ button {
 
 /* ===================== Prices and Terms Styles ====================== */
 .prices {
-    padding: 2rem;
+  padding: 2rem;
+}
+
+.prices-homes__card h4 {
+  font-size: 1.2rem;
 }
 
 .prices__title {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .prices__container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center; /* Horizontally center */
+  width: 100%; /* Ensure full width */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .prices-homes__card p {
-    font-size: var(--normal-font-size);
-    margin: 1rem 0;
-    text-align: left; /* Align text for better readability */
+  font-size: var(--normal-font-size);
+  margin: 1rem 0;
+  text-align: left; /* Align text for better readability */
+  white-space: normal; /* Prevent text from breaking onto a new line */
 }
 
 .prices-homes__card strong {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .prices-homes__card ul {
-    padding-left: 0.5rem; /* Indent the list */
-    list-style-type: none; /* Remove default bullets */
-    margin: 0.5rem 0;
-    text-align: left;
+  padding-left: 0.5rem; /* Indent the list */
+  list-style-type: none; /* Remove default bullets */
+  margin: 0.5rem 0;
+  text-align: left;
 }
 
 .prices-homes__card ul li {
-    display: flex;
-    align-items: center;  /* Vertically align the text with the icon */
-    font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;  /* Vertically align the text with the icon */
+  font-size: var(--small-font-size);
+  white-space: nowrap; /* Prevent list items from breaking into multiple lines */
 }
 
 .prices-homes__card ul li::before {
-    content: ""; /* Required for the custom list item */
-    display: inline-block;
-    width: 16px; /* Icon size */
-    height: 16px;
-    background-image: url('../Images/iconLogo.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 10px; /* Space between icon and text */
+  content: ""; /* Required for the custom list item */
+  display: inline-block;
+  width: 16px; /* Icon size */
+  height: 16px;
+  background-image: url('../Images/iconLogo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px; /* Space between icon and text */
 }
 
 .prices-homes__card strong {
-    color: var(--second-color); /* Highlighted text color */
+  color: var(--second-color); /* Highlighted text color */
 }
 
 #google-maps-icon {
-    padding: 6px;
-    font-size: 1.25rem;
-    color: #DB4437;  
+  padding: 6px;
+  font-size: 1.25rem;
+  color: #DB4437;  
 }
 
 /* Grid layout for the prices section */
 .prices__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px; /* Limit width for larger screens */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px; /* Limit width for larger screens */
+  margin: 0 auto; /* Center the grid container */
 }
 
 .prices__cards {
-    background-color: var(--container-color);
-    padding: 1rem;
-    border-radius: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
 /* ===================== Responsive Styles ====================== */
 
 /* For tablets and smaller screens */
 @media (max-width: 1024px) {
-    .prices__grid {
-        grid-template-columns: repeat(2, 1fr); /* Keep two columns */
-        gap: 1.5rem; /* Reduce gap for smaller screens */
-    }
+  .prices__grid {
+    grid-template-columns: repeat(2, 1fr); /* Keep two columns */
+    gap: 1.5rem; /* Reduce gap for smaller screens */
+  }
+
+  .prices-homes__card p {
+    font-size: 1.1rem; /* Increase font size slightly */
+  }
+
+  .prices-homes__card ul li {
+    font-size: 0.9rem; /* Adjust list items for readability */
+  }
 }
 
 /* For small screens (Mobile) */
 @media (max-width: 768px) {
-    .prices__grid {
-        grid-template-columns: 1fr; /* 1 column layout for smaller screens */
-        gap: 1.25rem;
-    }
+  .prices__grid {
+    grid-template-columns: 1fr; /* 1 column layout for smaller screens */
+    gap: 1.25rem;
+    margin: 0 auto; /* Ensure it's centered on small screens */
+  }
 
-    .prices-homes__card p {
-        font-size: 1rem; /* Increase font size for readability */
-    }
+  .prices-homes__card p {
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    margin: 1rem 0; /* Maintain good spacing around text */
+  }
 
-    .prices-homes__card ul li {
-        font-size: var(--smaller-font-size); /* Adjust font size for better readability on small screens */
-    }
+  .prices-homes__card ul li {
+    font-size: 0.9rem; /* Adjust font size for better readability on small screens */
+  }
+
+  .prices-homes__card ul li::before {
+    width: 14px; /* Slightly smaller icon for mobile */
+    height: 14px;
+    margin-right: 8px; /* Adjust space for the smaller icons */
+  }
 }
 
 /* For very small screens */
 @media (max-width: 480px) {
-    .prices__grid {
-        grid-template-columns: 1fr; /* Ensure 1 column layout */
-    }
+  .prices__grid {
+    grid-template-columns: 1fr; /* Ensure 1 column layout */
+    gap: 1rem; /* Smaller gap between items */
+    margin: 0 auto; /* Ensure the grid container is centered */
+  }
 
-    .prices-homes__card p {
-        font-size: 1.1rem; /* Slightly increase font size */
-    }
+  .prices-homes__card p {
+    font-size: 1rem; /* Larger font for readability */
+  }
+
+  .prices-homes__card ul li {
+    font-size: 1rem; /* Smaller font for list items on very small screens */
+  }
+
+  .prices-homes__card ul li::before {
+    width: 12px; /* Smaller icons for very small screens */
+    height: 12px;
+    margin-right: 6px; /* Adjust spacing for icons */
+  }
+}
+
+/* ===================== Responsive Styles for 320px to 450px ====================== */
+
+/* For screens between 320px and 450px */
+@media (min-width: 320px) and (max-width: 450px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  .prices__grid {
+    grid-template-columns: 1fr; /* Ensure 1 column layout */
+    gap: 1rem; /* Smaller gap between items */
+    margin: 0 auto; /* Ensure the grid container is centered */
+    padding: 0 1rem; /* Padding on the sides to prevent items from touching edges */
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+
+  .prices-homes__card {
+    padding: 0.75rem; /* Reduce padding to fit smaller screens */
+    border-radius: 0.75rem; /* Adjust radius for a better appearance on small screens */
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+
+  .prices-homes__card p {
+    font-size: 1rem; /* Slightly larger font for readability */
+    margin: 0.5rem 0; /* Adjust spacing for smaller screens */
+  }
+
+  .prices-homes__card ul li {
+    font-size: 0.85rem; /* Reduce font size for list items */
+  }
+
+  .prices-homes__card ul li::before {
+    width: 12px; /* Smaller icons for very small screens */
+    height: 12px;
+    margin-right: 6px; /* Adjust spacing for icons */
+  }
 }
 
 
 
 /*=============== CONTACT ===============*/
 .contact__container {
-    display: flex;
-    justify-content: center; /* Centers the entire container horizontally */
-    align-items: center; /* Vertically centers the container */
-  }
+  display: flex;
+  justify-content: center; /* Centers the entire container horizontally */
+  align-items: center; /* Vertically centers the container */
+}
 
-  .contact__title {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .contact__card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    justify-items: center; /* Centers each card horizontally within the grid */
-  }
-  
-  .contact__card-box {
-    background-color: var(--body-color);
-    border: 2px solid var(--border-color);
-    padding: 1.25rem .75rem;
-    border-radius: 1rem;
-    transition: .3s;
-    width: 100%; /* Ensure it spans the available width inside the grid */
-    max-width: 400px; /* Optional: sets a max width to prevent cards from being too wide */
-  }
-  
-  .contact__card-info {
-    display: flex;
-    align-items: center;
-    column-gap: .75rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  .contact__card i {
-    padding: 6px;
-    background-color: var(--first-color-lighten);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    font-size: 1.25rem;
-    color: var(--first-color);
-  }
-  
-  .contact__card-title {
-    font-size: var(--normal-font-size);
-  }
-  
-  .contact__card-description {
-    font-size: var(--smaller-font-size);
-  }
-  
-  .contact__card-button {
-    display: flex;
-    align-items: center;
-    font-size: var(--small-font-size);
-    padding: 14px 14px;
-    border-radius: .25rem;
-    background: var(--body-color);
-    color: var(--first-color);
-    font-weight: var(--font-semi-bold);
-    box-shadow: none;
-    transition: all .4s ease;
-    justify-content: center;
-  }
-  
-  .contact__card-button:hover {
-    background-color: var(--first-color);
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .contact__card-box:hover {
-    box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
-  } 
+.contact__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center; /* Centers each card horizontally within the grid */
+}
+
+.contact__card-box {
+  display: flex;
+  flex-direction: column; /* Arrange elements vertically */
+  justify-content: space-between; /* Push the button to the bottom */
+  background-color: var(--body-color);
+  border: 2px solid var(--border-color);
+  padding: 1.25rem .75rem;
+  border-radius: 1rem;
+  transition: .3s;
+  width: 100%; /* Ensure it spans the available width inside the grid */
+  max-width: 400px; /* Optional: sets a max width to prevent cards from being too wide */
+}
+
+.contact__card-info {
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact__card i {
+  padding: 6px;
+  background-color: var(--first-color-lighten);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
+.contact__card-title {
+  font-size: var(--normal-font-size);
+}
+
+.contact__card-description {
+  font-size: var(--smaller-font-size);
+}
+
+.contact__card-button {
+  margin-top: auto; /* Pushes the button to the bottom of the container */
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center;
+  font-size: var(--small-font-size);
+  padding: 14px 14px;
+  border-radius: .25rem;
+  background: var(--body-color);
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  box-shadow: none;
+  transition: all .4s ease;
+}
+
+.contact__card-button:hover {
+  background-color: var(--first-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact__card-box:hover {
+  box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
+} 
   
 /*=============== FOOTER ===============*/
 
